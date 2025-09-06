@@ -11,13 +11,24 @@ const displayCategories = (categories) => {
     treeList.innerHTML = ""
 
     categories.forEach(tree => {
-        console.log(tree.category_name);
         const treenames = document.createElement('div')
-        treenames.innerHTML = `<button class='btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent'>${tree.category_name}</button>`
+        treenames.innerHTML = `<button class='ctg-btn btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent' >${tree.category_name}</button>`
 
         treeList.appendChild(treenames)
     })
+
+    const btns = document.querySelectorAll('.ctg-btn')
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(btn => btn.classList.remove('active'))
+            btn.classList.add('active')
+        })
+
+    })
 }
+
+
 
 categories()
 // category section ends here
