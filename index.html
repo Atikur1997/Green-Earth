@@ -23,7 +23,60 @@
 </head>
 
 <body>
-    <h1 class="text-4xl font-bold underline">this is the page </h1>
+    <!-- nav bar starts here  -->
+    <nav class="">
+        <div class="navbar bg-base-100 shadow-sm bg-[#15803d] text-white">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-black">
+                        <li><a>About</a></li>
+                        <li><a>Gallery</a></li>
+                        <li><a>Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-xl">Green Earth</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>About</a></li>
+                    <li> <a>Gallery</a> </li>
+                    <li><a>Plant a Tree</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn bg-[#facc15] rounded-3xl text-[#15803d] shadow-none">Plant a Tree</a>
+            </div>
+        </div>
+
+    </nav>
+    <!-- nav bar ends here  -->
+
+    <section class="banner bg-[#cff0dc] flex md:flex-row flex-col gap-5">
+        <div class="self-end md:self-auto">
+            <img src="assets/hero-leaf1.png" alt="">
+        </div>
+        <div class="flex flex-col gap-4   md:items-center justify-center md:justify-center">
+            <h1 class="text-3xl font-bold">Plant a Tree, Grow a Future</h1>
+            <p class="text-sm text-center text-[#1f2937]">Join our mission to plant 1 million trees and make the Earth
+                greener for
+                future
+                generations.</p>
+
+            <button class="btn bg-[#facc15] rounded-4xl text-[#15803d]">Get Involved</button>
+        </div>
+        <div class="self-end md:self-auto">
+            <img src="assets/hero-leaf2.png" alt="">
+        </div>
+
+    </section>
 
 
     <script src="script.js"></script>
