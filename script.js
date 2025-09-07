@@ -26,7 +26,7 @@ const displayCategories = (categories) => {
             btn.classList.add('active')
             if (btn.id) {
                 showTrees(btn.id)
-                cartItems()
+
 
             } else {
                 treeCards()
@@ -106,12 +106,12 @@ const cartItems = (trees) => {
     const cart = document.createElement('div')
     cart.innerHTML = `
   
-                    <div id="cart-list" class="flex justify-between bg-[#f0fdf4] items-center p-5 rounded-lg">
+                    <div id="cart-list" class="flex justify-between bg-[#f0fdf4] items-center p-5 rounded-lg mb-3">
                         <div>
                             <h3 class="font-bold text-sm">${trees.name}</h3>
                             <p><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${trees.price} x 1</p>
                         </div>
-                        <div id="cross">
+                        <div class="cross">
                             <i class="fa-regular fa-circle-xmark cursor-pointer"></i>
                         </div>
                     </div>
@@ -119,9 +119,23 @@ const cartItems = (trees) => {
                     
     `
     cartList.appendChild(cart)
+    const total = document.getElementById('total')
+    total.innerText = parseInt(total.innerText) + parseInt(trees.price)
 
-    console.log(trees);
+    const cross = cart.querySelector('.cross')
+    cross.addEventListener('click', () => {
+        total.innerText = parseInt(total.innerText) - parseInt(trees.price)
+        cart.remove()
+    })
+
+
+
 }
+
+// cart section ends here
+
+
+
 
 categories()
 treeCards()
