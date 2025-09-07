@@ -85,9 +85,9 @@
             <h1 class="text-center text-2xl font-bold">Choose Your Trees</h1>
             <div class="grid grid-cols-1  md:grid-cols-5 justify-items-center md:justify-start ">
                 <!-- categories starts here -->
-                <div class="col-span-1" id="categories">
+                <div class="col-span-1 " id="categories">
                     <h3 class="font-bold text-lg">Categories</h3>
-                    <div id="tree-list" class="flex flex-col">
+                    <div id="tree-list" class="flex flex-row gap-3  md:flex-col flex-wrap md:flex-nowrap">
 
                     </div>
                 </div>
@@ -99,7 +99,7 @@
 
 
                 </div>
-                <div class="col-span-1 bg-white h-full w-[80%] p-3 ">
+                <div class="col-span-1 bg-white h-full w-[80%] p-3 rounded-md ">
                     <h1 class="text-xl font-bold">Your Cart</h1>
                     <div id="cartList"></div>
                     <div class="flex justify-between">
@@ -169,7 +169,7 @@
     <section class="bg-[#166534] pb-10">
         <h1 class="text-center pt-7 text-3xl font-bold text-white mb-10">Plant a Tree Today</h1>
 
-        <div class="bg-[#15803d] shadow-lg p-10 rounded-md text-center w-[50%] mx-auto">
+        <div class="bg-[#15803d] shadow-lg p-10 rounded-md text-center w-full md:w-[50%] mx-auto">
             <input type="text" placeholder="Your Name" class="input input-md w-[80%]" />
             <input type="text" placeholder="Your Email" class="input input-md w-[80%] my-4" />
             <input type="text" class="input w-[80%]" placeholder="Number of Trees" list="numbers" />
@@ -185,11 +185,13 @@
 
         </div>
 
+        <!-- footer section starts here  -->
     </section>
     <div class="bg-[#14532d] text-center py-6 text-white">
         <p>© 2025 Green Earth. All Rights Reserved.</p>
 
     </div>
+    <!-- footer section ends here  -->
 
 
     <script src="script.js"></script>

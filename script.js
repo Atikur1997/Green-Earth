@@ -8,7 +8,7 @@ const categories = () => {
 
 const displayCategories = (categories) => {
     const treeList = document.getElementById('tree-list')
-    treeList.innerHTML = `<button class='ctg-btn btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent w-[70%] p-5' >All Trees</button>`
+    treeList.innerHTML = `<button class='ctg-btn btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent w-[50%] md:w-[70%]  md:p-5' >All Trees</button>`
 
     categories.forEach(tree => {
         const treenames = document.createElement('div')
