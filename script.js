@@ -26,6 +26,8 @@ const displayCategories = (categories) => {
             btn.classList.add('active')
             if (btn.id) {
                 showTrees(btn.id)
+                cartItems()
+
             } else {
                 treeCards()
             }
@@ -76,16 +78,50 @@ const displayTressCards = (trees) => {
       <div class="badge badge-outline border-none hover:bg-green-600 hover:text-white cursor-pointer hover:py-3">\u09F3 ${tree.price}</div>
     </div>
   </div>
-<button class="btn bg-[#15803d] text-white rounded-2xl mx-auto w-[90%] mb-4">Add to Cart</button>
+<button class="btn bg-[#15803d] text-white rounded-2xl mx-auto w-[90%] mb-4 add_to_cart"  >Add to Cart</button>
 </div>
         `
         parentTrees.appendChild(card)
+
+        const addbtn = card.querySelector(".add_to_cart")
+        addbtn.addEventListener('click', () => {
+            cartItems(tree)
+        })
     })
+
+
 }
 
 
 // category section ends here
 
+
+
+
+
+const cartItems = (trees) => {
+    const cartList = document.getElementById('cartList')
+
+
+    const cart = document.createElement('div')
+    cart.innerHTML = `
+  
+                    <div id="cart-list" class="flex justify-between bg-[#f0fdf4] items-center p-5 rounded-lg">
+                        <div>
+                            <h3 class="font-bold text-sm">${trees.name}</h3>
+                            <p><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${trees.price} x 1</p>
+                        </div>
+                        <div id="cross">
+                            <i class="fa-regular fa-circle-xmark cursor-pointer"></i>
+                        </div>
+                    </div>
+
+                    
+    `
+    cartList.appendChild(cart)
+
+    console.log(trees);
+}
 
 categories()
 treeCards()
