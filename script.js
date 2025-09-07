@@ -12,20 +12,35 @@ const displayCategories = (categories) => {
 
     categories.forEach(tree => {
         const treenames = document.createElement('div')
-        treenames.innerHTML = `<button class='ctg-btn btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent' >${tree.category_name}</button>`
+        treenames.innerHTML = `<button id=${tree.id} class='ctg-btn btn hover:bg-[#15803d] hover:text-white mb-2 border-none bg-transparent' >${tree.category_name}</button>`
 
         treeList.appendChild(treenames)
     })
 
     const btns = document.querySelectorAll('.ctg-btn')
 
+
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             btns.forEach(btn => btn.classList.remove('active'))
             btn.classList.add('active')
+            if (btn.id) {
+                showTrees(btn.id)
+            } else {
+                treeCards()
+            }
         })
 
     })
+}
+
+const showTrees = (id) => {
+    const url = `https://openapi.programming-hero.com/api/category/${id}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayTressCards(data.plants))
+
+
 }
 
 const treeCards = () => {
@@ -36,7 +51,7 @@ const treeCards = () => {
 }
 
 const displayTressCards = (trees) => {
-    
+
     const parentTrees = document.getElementById('tree-cards')
     parentTrees.innerHTML = ''
 
@@ -67,6 +82,10 @@ const displayTressCards = (trees) => {
         parentTrees.appendChild(card)
     })
 }
+
+
 // category section ends here
+
+
 categories()
 treeCards()
